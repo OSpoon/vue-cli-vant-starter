@@ -21,6 +21,8 @@ module.exports = {
   },
   devServer: {
     port: 8888,
+    hot: true,
+    disableHostCheck: true,
     proxy: {
       '/api': {
         target: '<url>',
