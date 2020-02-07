@@ -9,7 +9,7 @@ import store from './../store'
 // axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
-let config = {
+const config = {
   // baseURL: process.env.baseURL || process.env.apiUrl || ""
   // timeout: 60 * 1000, // Timeout
   // withCredentials: true, // Check cross-site Access-Control
@@ -20,11 +20,11 @@ _axios.CancelToken = axios.CancelToken
 _axios.isCancel = axios.isCancel
 _axios.all = axios.all
 
-let pageAxiosList = new Set() // 用于解决同时请求多个 service 接口时，必须等最慢的接口返回数据之后再关闭 loading
+const pageAxiosList = new Set() // 用于解决同时请求多个 service 接口时，必须等最慢的接口返回数据之后再关闭 loading
 let axiosSource // 需要最新的链接的保存参数的地方
 
 _axios.interceptors.request.use(
-  function (config) {
+  function(config) {
     // Do something before request is sent
     if (config.showLoading && !pageAxiosList.size) {
       Vue.prototype.$toast.loading({
@@ -53,7 +53,7 @@ _axios.interceptors.request.use(
     }
     return config
   },
-  function (error) {
+  function(error) {
     // Do something with request error
     Vue.prototype.$toast('网络出错，请重试')
     return Promise.reject(error)
@@ -62,9 +62,9 @@ _axios.interceptors.request.use(
 
 // Add a response interceptor
 _axios.interceptors.response.use(
-  function (response) {
+  function(response) {
     // Do something with response data
-    let nowUrl = response.config.url
+    const nowUrl = response.config.url
     if (pageAxiosList.has(nowUrl)) {
       pageAxiosList.delete(nowUrl)
     }
@@ -78,11 +78,11 @@ _axios.interceptors.response.use(
     }
     return response
   },
-  function (error) {
+  function(error) {
     // Do something with response error
     if (_axios.isCancel(error)) {
       // 判断是否是切换路由导致的取消，如果是的话还需要将 pageAxiosList 清空
-      for (let item of pageAxiosList.keys()) {
+      for (const item of pageAxiosList.keys()) {
         pageAxiosList.delete(item)
       }
       Vue.prototype.$toast.clear()
@@ -95,17 +95,17 @@ _axios.interceptors.response.use(
   }
 )
 
-Plugin.install = function (Vue, options) {
+Plugin.install = function(Vue, options) {
   Vue.axios = _axios
   window.axios = _axios
   Object.defineProperties(Vue.prototype, {
     axios: {
-      get () {
+      get() {
         return _axios
       }
     },
     $axios: {
-      get () {
+      get() {
         return _axios
       }
     }

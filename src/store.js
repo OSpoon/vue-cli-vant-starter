@@ -10,7 +10,7 @@ export default new Vuex.Store({
     source: CancelToken.source()
   },
   mutations: {
-    setSource (state, obj) {
+    setSource(state, obj) {
       // 路由切换新建新建取消令牌，并写入store
       state.source = obj
     }

@@ -8,7 +8,7 @@ module.exports = {
       postcss: {
         plugins: [
           autoprefixer({
-            browsers: ['Android >= 4.0', 'iOS >= 7']
+            overrideBrowserslist: ['Android >= 4.0', 'iOS >= 7']
           }),
           pxtorem({
             rootValue: 37.5,
@@ -20,6 +20,7 @@ module.exports = {
     }
   },
   devServer: {
+    port: 8888,
     proxy: {
       '/api': {
         target: '<url>',
