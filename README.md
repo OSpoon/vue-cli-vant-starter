@@ -101,6 +101,43 @@ models('140724199403250073', '1234567890', '{222:333,444:555}').then(response =>
 })
 ```
 
+## 增加一个模块 ##
+1. 在src/view目录下创建模块文件夹,并创建模块页面.vue文件
+2. 在src/routers新增模块名称的路由js文件
+3. 配置示例:
+```js
+const demo = () => import(/* webpackChunkName: "demo" */ '@/views/demo/Demo.vue')
+
+export default [
+  {
+    name: 'demo',
+    path: '/demo',
+    component: demo,
+    meta: {
+      title: 'Demo',
+      login: false
+    }
+  }
+]
+```
+4. 将新增的模块路由配置到src/routers/index.js中,配置示例如下:
+```js
+function callback() {
+  require([
+    './demo'
+  ],
+  (
+    demo,
+  ) => {
+    router.addRoutes([
+      ...demo.default
+    ])
+  }).catch(err => {
+    console.log(err.message)
+  })
+}
+```
+
 ### 安装依赖及插件 ###
 
 ```
