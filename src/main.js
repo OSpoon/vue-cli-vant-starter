@@ -22,10 +22,6 @@ if (process.env.NODE_ENV === 'development' && process.env.VUE_APP_DEBUG) {
 // 注册全局utils
 window.utils = utils
 
-window.globalConfig = {
-  gwAuth: 'https://ewx.e-sleb.com/product/api/v1/weixin/authorization/index?shareType=gsbzf'
-}
-
 Vue.use(Toast)
 Vue.use(Field)
 Vue.use(NavBar)
