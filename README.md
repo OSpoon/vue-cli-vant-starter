@@ -159,12 +159,12 @@ npm run build:prod
 
 ## 使用技术栈 ##
 
-1. (Vue)[https://cn.vuejs.org/]
-2. (Vue Cli)[https://cli.vuejs.org/zh/guide/cli-service.html]
-3. (Vue Router)[https://router.vuejs.org/zh/guide/#html]
-4. (Vuex)[https://vuex.vuejs.org/zh/]
-5. (vant)[https://youzan.github.io/vant/#/zh-CN/]
-6. (axios)[http://www.axios-js.com/]
+1. [Vue](https://cn.vuejs.org/)
+2. [Vue Cli](https://cli.vuejs.org/zh/guide/cli-service.html)
+3. [Vue Router](https://router.vuejs.org/zh/guide/#html)
+4. [Vuex](https://vuex.vuejs.org/zh/)
+5. [vant](https://youzan.github.io/vant/#/zh-CN/)
+6. [axios](http://www.axios-js.com/)
 
 ### 鸣谢 ###
 
