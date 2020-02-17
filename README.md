@@ -1,5 +1,26 @@
 # vue-cli-vant-starter #
 
+# 开发工具请使用(VSCode)
+1. 插件: eslint
+2.  文件>首选项>设置,打开VSCode配置文件,添加如下配置
+```json
+{
+    "files.autoSave": "off",
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "vue-html",
+        {
+        "language": "vue",
+        "autoFix": true
+        }
+    ],
+    "eslint.run": "onSave",
+    "eslint.autoFixOnSave": true
+}
+```
+
+
 vue-cli 和 vant 结合的项目开发模板，主要内容如下（后续新增的内容会在其后使用方括号标识添加时间）：
 
 1. 将 `axios` 或者 `$axios` 添加到 `Vue.prototype` ，对 `axios` 的封装是基于 [vue-cli-plugin-axios](https://www.npmjs.com/package/vue-cli-plugin-axios) 插件。
