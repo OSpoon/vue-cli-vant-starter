@@ -7,6 +7,18 @@ import store from './store'
 import utils from './utils'
 import * as filters from './filters' // global filters
 
+if (process.env.NODE_ENV === 'development' && process.env.VUE_APP_DEBUG) {
+  import('eruda').then(module => {
+    var el = document.createElement('div')
+    document.body.appendChild(el)
+    module.default.init({
+      container: el
+    })
+  }).catch(err => {
+    console.log(err.message)
+  })
+}
+
 // 注册全局utils
 window.utils = utils
 
