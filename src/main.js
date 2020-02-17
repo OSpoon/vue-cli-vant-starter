@@ -2,7 +2,7 @@ import Vue from 'vue'
 import 'amfe-flexible'
 import { Toast, Field, NavBar, Button, Divider, DropdownMenu, DropdownItem } from 'vant'
 import App from './App.vue'
-import router from './router'
+import router from './routers'
 import store from './store'
 import utils from './utils'
 import * as filters from './filters' // global filters
