@@ -157,6 +157,28 @@ npm run build:stage
 npm run build:prod
 ```
 
+## 构建和发布 ##
+### 构建 ###
+```sh
+# 打包正式环境
+npm run build:prod
+
+# 打包预发布环境
+npm run build:stage
+```
+
+### 环境变量 ###
+1. 环境变量的配置文件:
+    1. .env.development 开发环境
+    2. .env.staging 预发布环境
+    3. .env.production 发布环境
+2. 环境变量必须以VUE_APP_为开头。如:VUE_APP_API
+3. 获取环境变量: process.env.VUE_APP_xxxx
+
+### 分析构建文件体积 ###
+1. 执行 `npm run preview -- --report`
+2. 打开 (http://localhost:9999/report.html)[http://localhost:9999/report.html]
+
 ## 使用技术栈 ##
 
 1. [Vue](https://cn.vuejs.org/)
