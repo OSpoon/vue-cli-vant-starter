@@ -9,10 +9,6 @@ vue-cli 和 vant 结合的项目开发模板，主要内容如下：
     2. [lib-flexible](https://github.com/amfe/lib-flexible) 用于设置 rem 基准值
     3. 设计图标准按照 375 * 667 的尺寸给出，布局的时候除了 1px 其他全部按照 测量的距离 写就可以了
 
-## 模板说明 ##
-
-1. 本模板暂时的技术栈为： vue + vue-cli + vue-router + vuex + vant + axios + less（如果你使用的是其他的css预编译器请自行配置）
-
 ## 开发工具请使用(VSCode) ##
 1. 插件: eslint
 2.  文件>首选项>设置,打开VSCode配置文件,添加如下配置
@@ -161,11 +157,14 @@ npm run build:stage
 npm run build:prod
 ```
 
-### 更多详细配置 ###
+## 使用技术栈 ##
 
-请看 [Configuration Reference](https://cli.vuejs.org/config/)。
-
-如果你使用的是 `vue ui` ，会发现项目名称可能不是你需要的，这个时候只需要将 `package.json` 和 `package-lock.json` 文件中的 `name` 修改为你希望的名称，然后重启项目。
+1. (Vue)[https://cn.vuejs.org/]
+2. (Vue Cli)[https://cli.vuejs.org/zh/guide/cli-service.html]
+3. (Vue Router)[https://router.vuejs.org/zh/guide/#html]
+4. (Vuex)[https://vuex.vuejs.org/zh/]
+5. (vant)[https://youzan.github.io/vant/#/zh-CN/]
+6. (axios)[http://www.axios-js.com/]
 
 ### 鸣谢 ###
 
