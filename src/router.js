@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 const Home = () => import(/* webpackChunkName: "home" */ './views/Home.vue')
-const About = () => import(/* webpackChunkName: "about" */ './views/About.vue')
+const Demo = () => import(/* webpackChunkName: "about" */ './views/Demo.vue')
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -13,9 +13,11 @@ export default new Router({
       component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      component: About
+      path: '/demo',
+      name: 'demo',
+      component: Demo
     }
   ]
 })
+
+export default router

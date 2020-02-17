@@ -20,6 +20,74 @@
 }
 ```
 
+# 如何配置Vuex
+1. 在src/store/modules目录下创建模块命名的js文件
+2. 配置样例
+```js
+import Cookies from 'js-cookie'
+
+const state = {
+  size: Cookies.get('size') || 'medium'
+}
+
+const mutations = {
+  SET_SIZE: (state, size) => {
+    state.size = size
+    Cookies.set('size', size)
+  }
+}
+
+const actions = {
+  setSize({ commit }, size) {
+    commit('SET_SIZE', size)
+  }
+}
+
+export default {
+  namespaced: true,
+  state,
+  mutations,
+  actions
+}
+```
+3. 配置getters.js `size: state => state.apps.size`
+
+# 如何使用vuex
+1. 设置内容
+`this.$store.dispatch('apps/setSize', size)`
+```js
+async xxx() {
+    await this.$store.dispatch('apps/setSize', size)
+    ...
+}
+```
+2. 获取内容`this.$store.getters.size`
+
+# 新增一个请求
+1. 在src/api目录新建模块命名的js文件
+2. 导入`import request from '@/utils/request'`
+3. 编写接口
+```js
+export function models(id, token, data) {
+  return request({
+    url: '/function/models', //请求路径
+    method: 'post', //请求方式
+    params: { id: id, token: token }, // path params
+    data, // FormData
+    showLoading: true //是否展示loading
+  })
+}
+```
+
+# 如何使用新定义的接口
+1. 在需要使用的页面导入`import { models } from '@/api/function'`
+2. 调用
+```js
+models('140724199403250073', '1234567890', '{222:333,444:555}').then(response => {
+    console.log('response', response)
+})
+```
+
 
 vue-cli 和 vant 结合的项目开发模板，主要内容如下（后续新增的内容会在其后使用方括号标识添加时间）：
 

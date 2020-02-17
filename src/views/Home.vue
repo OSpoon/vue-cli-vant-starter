@@ -1,31 +1,27 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <van-nav-bar
+      title="Home"
+    />
+    <h3><a href="#/demo">跳转到Demo页</a></h3>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
-  },
   created() {
-    this.$toast.loading({
-      duration: 0,
-      mask: true,
-      forbidClick: true,
-      message: '加载中...',
-      loadingType: 'spinner'
-    })
+    // this.$toast.loading({
+    //   duration: 0,
+    //   mask: true,
+    //   forbidClick: true,
+    //   message: '加载中...',
+    //   loadingType: 'spinner'
+    // })
 
-    setTimeout(() => {
-      this.$toast.clear()
-    }, 3000)
+    // setTimeout(() => {
+    //   this.$toast.clear()
+    // }, 3000)
   }
 }
 </script>
