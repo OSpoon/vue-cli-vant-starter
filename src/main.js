@@ -15,8 +15,7 @@ Vue.use(DropdownMenu)
 Vue.use(DropdownItem)
 import VueWechatTitle from 'vue-wechat-title'
 Vue.use(VueWechatTitle)
-
-if (process.env.NODE_ENV === 'development' && process.env.VUE_APP_DEBUG) {
+if (process.env.NODE_ENV === 'development' && process.env.VUE_APP_DEBUG === 'true') {
   import('eruda').then(module => {
     var el = document.createElement('div')
     document.body.appendChild(el)

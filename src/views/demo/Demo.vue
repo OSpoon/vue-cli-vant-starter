@@ -40,21 +40,33 @@ export default {
       } else if (value === 1) {
         models().then(response => {
           console.log('response', response)
+        }).catch(err => {
+          console.log('err', err)
         })
         models().then(response => {
           console.log('response', response)
+        }).catch(err => {
+          console.log('err', err)
         })
         models().then(response => {
           console.log('response', response)
+        }).catch(err => {
+          console.log('err', err)
         })
         models().then(response => {
           console.log('response', response)
+        }).catch(err => {
+          console.log('err', err)
         })
         models().then(response => {
           console.log('response', response)
+        }).catch(err => {
+          console.log('err', err)
         })
         models().then(response => {
           console.log('response', response)
+        }).catch(err => {
+          console.log('err', err)
         })
       } else if (value === 2) {
         models().then(response => {
