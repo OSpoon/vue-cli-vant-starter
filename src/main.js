@@ -22,7 +22,14 @@ import {
   Tabbar,
   TabbarItem,
   Tab,
-  Tabs
+  Tabs,
+  Collapse,
+  CollapseItem,
+  Icon,
+  Cell,
+  CellGroup,
+  Search,
+  ActionSheet
 } from 'vant'
 Vue.use(Toast)
 Vue.use(Field)
@@ -40,6 +47,13 @@ Vue.use(Tabbar)
 Vue.use(TabbarItem)
 Vue.use(Tab)
 Vue.use(Tabs)
+Vue.use(Collapse)
+Vue.use(CollapseItem)
+Vue.use(Icon)
+Vue.use(Cell)
+Vue.use(CellGroup)
+Vue.use(Search)
+Vue.use(ActionSheet)
 
 import VueWechatTitle from 'vue-wechat-title'
 Vue.use(VueWechatTitle)
