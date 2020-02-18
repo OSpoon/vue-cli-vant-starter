@@ -1,11 +1,20 @@
 import Vue from 'vue'
 import 'amfe-flexible'
-import { Toast, Field, NavBar, Button, Divider, DropdownMenu, DropdownItem } from 'vant'
 import App from './App.vue'
 import router from './routers'
 import store from './store'
 import utils from './utils'
 import * as filters from './filters' // global filters
+import { Toast, Field, NavBar, Button, Divider, DropdownMenu, DropdownItem } from 'vant'
+Vue.use(Toast)
+Vue.use(Field)
+Vue.use(NavBar)
+Vue.use(Button)
+Vue.use(Divider)
+Vue.use(DropdownMenu)
+Vue.use(DropdownItem)
+import VueWechatTitle from 'vue-wechat-title'
+Vue.use(VueWechatTitle)
 
 if (process.env.NODE_ENV === 'development' && process.env.VUE_APP_DEBUG) {
   import('eruda').then(module => {
@@ -21,14 +30,6 @@ if (process.env.NODE_ENV === 'development' && process.env.VUE_APP_DEBUG) {
 
 // 注册全局utils
 window.utils = utils
-
-Vue.use(Toast)
-Vue.use(Field)
-Vue.use(NavBar)
-Vue.use(Button)
-Vue.use(Divider)
-Vue.use(DropdownMenu)
-Vue.use(DropdownItem)
 
 // register global utility filters
 Object.keys(filters).forEach(key => {

@@ -188,6 +188,10 @@ npm run build:stage
 4. [Vuex](https://vuex.vuejs.org/zh/)
 5. [vant](https://youzan.github.io/vant/#/zh-CN/)
 6. [axios](http://www.axios-js.com/)
+7. [plop](https://www.npmjs.com/package/plop)
+8. [crypto-js](https://www.npmjs.com/package/crypto-js)
+9. [js-cookie](https://www.npmjs.com/package/js-cookie)
+10. [vue-wechat-title](https://www.npmjs.com/package/vue-wechat-title)
 
 ### 鸣谢 ###
 

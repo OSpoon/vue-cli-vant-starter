@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+const defaultSettings = require('@/settings')
+const name = defaultSettings.title || 'vue-cli-vant-starter'
 
 Vue.use(Router)
 const router = new Router({
@@ -8,7 +10,10 @@ const router = new Router({
     {
       path: '/',
       name: 'home',
-      component: () => import('@/views/Home.vue')
+      component: () => import('@/views/Home.vue'),
+      meta: {
+        title: name + ' - 首页'
+      }
     }
   ]
 })
