@@ -138,6 +138,8 @@ function callback() {
 }
 ```
 
+## 构建和发布 ##
+
 ### 安装依赖及插件 ###
 
 ```
@@ -149,19 +151,7 @@ yarn install
 ```
 npm run serve
 ```
-### 预生产模式打包 ###
 
-```
-npm run build:stage
-```
-
-### 生产模式打包 ###
-
-```
-npm run build:prod
-```
-
-## 构建和发布 ##
 ### 构建 ###
 ```sh
 # 打包正式环境
