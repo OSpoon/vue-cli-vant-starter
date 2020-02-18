@@ -68,6 +68,7 @@
 </template>
 
 <script>
+import { ImagePreview } from 'vant'
 export default {
   name: 'Home',
   data() {
@@ -113,6 +114,13 @@ export default {
       // 默认情况下点击选项时不会自动收起
       // 可以通过 close-on-click-action 属性开启自动收起
       console.log(item)
+      ImagePreview({
+        images: [
+          'https://img.yzcdn.cn/vant/apple-1.jpg',
+          'https://img.yzcdn.cn/vant/apple-2.jpg'
+        ],
+        closeable: true
+      })
       this.show = false
     }
   }
