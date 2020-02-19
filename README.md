@@ -8,10 +8,6 @@ vue-cli 和 vant 结合的项目开发模板，主要内容如下：
     2. [lib-flexible](https://github.com/amfe/lib-flexible) 用于设置 rem 基准值
     3. 设计图标准按照 375 * 667 的尺寸给出，布局的时候除了 1px 其他全部按照 测量的距离 写就可以了
 4. 使用`plop`构建初始页面/组件/store/apis,执行命令`npm run new`
-    1. 新增页面 执行`yarn new`,选择view
-    2. 新增组件 执行`yarn new`,选择component
-    2. 新增store 执行`yarn new`,选择store
-    2. 新增API 执行`yarn new`,选择apis
 5. 增加`axios`重复发送同一请求屏蔽操作
 
 ### 使用说明 ###
