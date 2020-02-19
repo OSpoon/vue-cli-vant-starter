@@ -1,4 +1,4 @@
-const demo = () => import(/* webpackChunkName: "demo" */ '@/views/demo/Demo.vue')
+const demo = () => import(/* webpackChunkName: "demo" */ '@/views/demo/index.vue')
 
 export default [
   {

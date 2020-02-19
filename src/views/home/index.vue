@@ -1,15 +1,12 @@
-{{#if template}}
 <template>
   <div>
-    {{ properCase name }}
+    Home
   </div>
 </template>
-{{/if}}
 
-{{#if script}}
 <script>
 export default {
-  name: '{{ properCase name }}',
+  name: 'Home',
   props: {},
   data() {
     return {}
@@ -19,10 +16,7 @@ export default {
   methods: {}
 }
 </script>
-{{/if}}
 
-{{#if style}}
 <style lang="less" scoped>
 
 </style>
-{{/if}}
