@@ -77,32 +77,23 @@ async xxx() {
 ```
 2. 获取内容`this.$store.getters.size`
 
-## 新增一个请求 ##
-1. 在src/api目录新建模块命名的js文件
-2. 导入`import request from '@/utils/request'`
-3. 编写接口
-```js
-export function models(id, token, data) {
-  return request({
-    url: '/function/models', //请求路径
-    method: 'post', //请求方式
-    params: { id: id, token: token }, // path params
-    data, // FormData
-    showLoading: true //是否展示loading
-  })
-}
-```
 
-## 如何使用新定义的接口 ##
-1. 在需要使用的页面导入`import { models } from '@/api/function'`
-2. 调用
-```js
-models('140724199403250073', '1234567890', '{222:333,444:555}').then(response => {
-    console.log('response', response)
-}).catch(err => {
-  console.log('err', err)
-})
-```
+## 新增请求 ##
+1. 目录`src/api/xxx.js`
+2. 创建api接口
+    1. 命令执行`yarn new`
+    2. 输入api接口名称
+    3. 选择apis,确定即可
+3. 调用
+    1. 导入`import { xxx } from '@/api/xxx'`
+    2. ```js
+        xxxGet({id:xxx}).then(response => {
+            console.log('response', response)
+        }).catch(err => {
+          console.log('err', err)
+        })
+       ```
+注意: 默认生成增,删,改,查4个API,具体请按实际接口调整
 
 ## 增加一个模块 ##
 1. 在src/view目录下创建模块文件夹,并创建模块页面.vue文件

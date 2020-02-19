@@ -220,10 +220,14 @@
 ```
 
 ### less的运算 ###
-1.
-2.
-3.
+```less
+<style lang="less" scoped>
+#wrap{
+  .sjx{
+    width: (100 + 200px);
+  }
+}
+</style>
+```
+
 ### less避免编译 ###
-1.
-2.
-3.
