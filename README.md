@@ -14,13 +14,13 @@ vue-cli 和 vant 结合的项目开发模板，主要内容如下：
     2. 新增API 执行`yarn new`,选择apis
 5. 增加`axios`重复发送同一请求屏蔽操作
 
-## 使用说明 ##
+### 使用说明 ###
 1. [使用说明(模板使用).md](./使用说明(模板使用).md)
 2. [使用说明(开发工具).md](./使用说明(开发工具).md)
 3. [使用说明(构建和发布).md](./使用说明(构建和发布).md)
 4. [其他说明(Less使用).md](./其他说明(Less使用).md)
 
-## 使用依赖及文档地址 ##
+### 使用依赖及文档地址 ###
 
 1. [Vue](https://cn.vuejs.org/)
 2. [Vue Cli](https://cli.vuejs.org/zh/guide/cli-service.html)
