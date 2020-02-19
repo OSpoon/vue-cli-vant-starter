@@ -95,42 +95,47 @@ async xxx() {
        ```
 注意: 默认生成增,删,改,查4个API,具体请按实际接口调整
 
-## 增加一个模块 ##
-1. 在src/view目录下创建模块文件夹,并创建模块页面.vue文件
-2. 在src/routers新增模块名称的路由js文件
-3. 配置示例:
-```js
-const demo = () => import(/* webpackChunkName: "demo" */ '@/views/demo/Demo.vue')
 
-export default [
-  {
-    name: 'demo',
-    path: '/demo',
-    component: demo,
-    meta: {
-      title: 'Demo',
-      login: false
-    }
-  }
-]
-```
-4. 将新增的模块路由配置到src/routers/index.js中,配置示例如下:
-```js
-function callback() {
-  require([
-    './demo'
-  ],
-  (
-    demo,
-  ) => {
-    router.addRoutes([
-      ...demo.default
-    ])
-  }).catch(err => {
-    console.log(err.message)
-  })
-}
-```
+## 新增View ##
+1. 目录`src/view/xxx/xxx.vue`
+2. 创建View
+    1. 命令执行`yarn new`
+    2. 输入view名称
+    3. 选择view,确定即可
+4. 添加路由
+    1. 目录`src/routers`
+    2. 新建新模块的路由文件(已有模块路由文件打开后做相应配置)
+        ```js
+        const user = () => import(/* webpackChunkName: "demo" */ '@/views/user/index.vue')
+
+        export default [
+          {
+            name: 'user',
+            path: '/user',
+            component: user,
+            meta: {
+              title: '用户页面'
+            }
+          }
+        ]
+        ```
+    3. 将新增的模块路由配置到src/routers/index.js中,配置示例如下:
+      ```js
+      function callback() {
+        require([
+          './user'
+        ],
+        (
+          user,
+        ) => {
+          router.addRoutes([
+            ...user.default
+          ])
+        }).catch(err => {
+          console.log(err.message)
+        })
+      }
+      ```
 
 ## 构建和发布 ##
 
