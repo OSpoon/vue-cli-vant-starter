@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import axios from 'axios'
 import { Dialog } from 'vant'
-import store from '@/store'
-import { getToken } from '@/utils/auth'
 
 const pending = {}
 const CancelToken = axios.CancelToken
@@ -24,7 +22,7 @@ const getRequestIdentify = (config, isReuest = false) => {
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
   // withCredentials: true, // send cookies when cross-domain requests
-  timeout: 20000 // 请求超时
+  timeout: 16000 // 请求超时
 })
 
 // 请求拦截器
@@ -38,6 +36,7 @@ service.interceptors.request.use(
       pending[requestData] = c
     })
 
+    // 是否开启loading
     if (config.showLoading) {
       Vue.prototype.$toast.loading({
         duration: 0,
@@ -47,13 +46,14 @@ service.interceptors.request.use(
         loadingType: 'spinner'
       })
     }
-    // do something before request is sent
-    if (store.getters.token) {
-      // let each request carry token
-      // ['X-AUTH-TOKEN'] is a custom headers key
-      // please modify it according to the actual situation
-      config.headers['X-AUTH-TOKEN'] = getToken()
-    }
+
+    // 请求发送前的预处理(如:获取token等)
+    // if (store.getters.token) {
+    //   // let each request carry token
+    //   // ['X-AUTH-TOKEN'] is a custom headers key
+    //   // please modify it according to the actual situation
+    //   config.headers['X-AUTH-TOKEN'] = getToken()
+    // }
     return config
   },
   error => {
@@ -74,6 +74,7 @@ service.interceptors.response.use(
     if (response.config.showLoading) {
       Vue.prototype.$toast.clear()
     }
+
     const res = response.data
     return res
   },
@@ -129,13 +130,7 @@ service.interceptors.response.use(
           message: error.message
         }
         console.log('统一错误处理: ', errData)
-        if (errData.code >= 400 && errData.code < 500) {
-          Dialog({ title: '提示', message: '业务执行错误: ' + errData.message || 'Error' })
-        } else if (errData.code >= 500) {
-          Dialog({ title: '提示', message: '系统运行异常: ' + errData.message || 'Error' })
-        } else {
-          Dialog({ title: '提示', message: '其他异常: ' + errData.message || 'Error' })
-        }
+        Dialog({ title: '提示', message: errData.message || 'Error' })
       } else if (error.request) {
         Vue.prototype.$toast('网络出错，请稍后重试')
       }
