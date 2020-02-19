@@ -229,5 +229,143 @@
 }
 </style>
 ```
+### less继承 ###
+1. 方式一
+```less
+<style lang="less" scoped>
+@import '../../style/style.less';
+
+*{
+  margin: 0;
+  padding: 0;
+}
+#wrap{
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 1px solid;
+  margin: 0 auto;
+  .inner:extend(.juzhong){
+    &:nth-child(1){
+      width: 200px;
+      height: 400px;
+      background: red;
+    }
+    &:nth-child(2){
+      width: 400px;
+      height: 200px;
+      background: pink;
+    }
+  }
+}
+</style>
+```
+
+2. 方式二
+```less
+<style lang="less" scoped>
+@import '../../style/style.less';
+
+*{
+  margin: 0;
+  padding: 0;
+}
+#wrap{
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 1px solid;
+  margin: 0 auto;
+  .inner{
+    &:extend(.juzhong);
+    &:nth-child(1){
+      width: 200px;
+      height: 400px;
+      background: red;
+    }
+    &:nth-child(2){
+      width: 400px;
+      height: 200px;
+      background: pink;
+    }
+  }
+}
+</style>
+```
+3. 全部继承
+```less
+//公共样式
+.juzhong{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.juzhong:hover{
+    background: red!important;
+}
+```
+```less
+//使用
+<style lang="less" scoped>
+@import '../../style/style.less';
+*{
+  margin: 0;
+  padding: 0;
+}
+#wrap{
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 1px solid;
+  margin: 0 auto;
+  .inner{
+    &:extend(.juzhong all);
+    &:nth-child(1){
+      width: 200px;
+      height: 400px;
+      background: red;
+    }
+    &:nth-child(2){
+      width: 400px;
+      height: 200px;
+      background: pink;
+    }
+  }
+}
+</style>
+```
 
 ### less避免编译 ###
+编译前
+```less
+*{
+    margin: 100 + 10px;
+    padding: cacl(100px + 100)
+}
+```
+编译后
+```css
+*{
+    margin: 110px;
+    padding: cacl(200px)
+}
+```
+调整cacl禁止编译
+编译前
+```less
+*{
+    margin: 100 + 10px;
+    padding: ~"cacl(100px + 100)"
+}
+```
+编译后
+```css
+*{
+    margin: 110px;
+    padding: cacl(100px + 100)
+}
+```
