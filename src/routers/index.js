@@ -23,13 +23,16 @@ const router = new Router({
 // 添加新增模块的路由配置
 function callback() {
   require([
-    './demo'
+    './demo',
+    './ncov'
   ],
   (
     demo,
+    ncov
   ) => {
     router.addRoutes([
-      ...demo.default
+      ...demo.default,
+      ...ncov.default
     ])
   }).catch(err => {
     console.log(err.message)

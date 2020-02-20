@@ -29,7 +29,9 @@ import {
   Cell,
   CellGroup,
   Search,
-  ActionSheet
+  ActionSheet,
+  CouponCell,
+  CouponList
 } from 'vant'
 Vue.use(Toast)
 Vue.use(Field)
@@ -54,6 +56,8 @@ Vue.use(Cell)
 Vue.use(CellGroup)
 Vue.use(Search)
 Vue.use(ActionSheet)
+Vue.use(CouponCell)
+Vue.use(CouponList)
 
 import VueWechatTitle from 'vue-wechat-title'
 Vue.use(VueWechatTitle)
