@@ -9,7 +9,7 @@
     "preview": "node build/index.js --preview",
     "lint": "eslint --ext .js,.vue src",
     "new": "plop",
-    "clog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0"
+    "clog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
     "amfe-flexible": "^2.2.1",
@@ -37,6 +37,8 @@
     "babel-plugin-import": "^1.11.2",
     "chalk": "^3.0.0",
     "connect": "^3.7.0",
+    "conventional-changelog": "^3.1.18",
+    "conventional-changelog-cli": "^2.0.31",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "ghooks": "^2.0.4",
