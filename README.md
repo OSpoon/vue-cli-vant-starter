@@ -37,14 +37,18 @@ vue-cli 和 vant 结合的项目开发模板，主要内容如下：
 
 ### 注意事项 ###
 1. Q: 如使用sourceTree提交代码,在Mac系统提示env: node: No such file or directory
+
    A: 项目开启的提交信息检测,因未知原因无法解决,提供初步解决方案如下
         1. 在User/username目录下找到.bash_profile文件(显示隐藏文件快捷键:Command+Shift+.)
         2. 文件末尾添加命令`alias ost="/Applications/SourceTree.app/Contents/MacOS/SourceTree"`
         3. 重启电脑使.bash_profile得修改生效
         4. 开机后终端执行`ost`即可打开sourceTree,提交代码可正常进行(终端暂不可关闭,关闭后sourceTree也会推出,如有高招请赐教)
+
 2. Q: 提交代码提示红色报错信息:INVALID COMMIT MSG: does not match "<type>(<scope>): <subject>" !
+
    A: 项目开启的提交信息检测,因不规范被拦截,请查看[使用说明(GIT提交规范).md](./使用说明(GIT提交规范).md),修改后进行重新提交
 3. Q: node-sass安装时间过长,或超时安装失败
+
    A: 推荐使用`cnpm install node-sass`安装
 
 
