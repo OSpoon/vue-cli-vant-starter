@@ -11,6 +11,14 @@ const routes = [
     meta: {
       title: '首页'
     }
+  },
+  {
+    path: '/404',
+    name: '404',
+    component: () => import('@/views/error/index.vue'),
+    meta: {
+      title: '404NotFound'
+    }
   }
 ]
 
@@ -31,6 +39,7 @@ function callback() {
     router.addRoutes([
       ...demo.default
     ])
+    router.addRoutes([{ path: '*', redirect: '/404', hidden: true }])
   }).catch(err => {
     console.log(err.message)
   })
