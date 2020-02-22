@@ -8,7 +8,8 @@
     "build:stage": "vue-cli-service build --mode staging",
     "preview": "node build/index.js --preview",
     "lint": "eslint --ext .js,.vue src",
-    "new": "plop"
+    "new": "plop",
+    "clog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0"
   },
   "dependencies": {
     "amfe-flexible": "^2.2.1",
@@ -76,10 +77,24 @@
       "commit-msg": "validate-commit-msg"
     },
     "validate-commit-msg": {
-      "types": ["feat", "fix", "docs", "style", "refactor", "perf", "test", "build", "ci", "chore", "revert"],
+      "types": [
+        "feat",
+        "fix",
+        "docs",
+        "style",
+        "refactor",
+        "perf",
+        "test",
+        "build",
+        "ci",
+        "chore",
+        "revert"
+      ],
       "scope": {
         "required": false,
-        "allowed": ["*"],
+        "allowed": [
+          "*"
+        ],
         "validate": false,
         "multiple": false
       },
