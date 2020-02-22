@@ -38,11 +38,13 @@
     "connect": "^3.7.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "ghooks": "^2.0.4",
     "http-proxy-middleware": "^0.19.1",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
     "postcss-pxtorem": "^4.0.1",
     "runjs": "^4.4.2",
+    "validate-commit-msg": "^2.14.0",
     "vue-cli-plugin-axios": "0.0.4",
     "vue-template-compiler": "^2.6.10"
   },
@@ -68,5 +70,25 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "config": {
+    "ghooks": {
+      "commit-msg": "validate-commit-msg"
+    },
+    "validate-commit-msg": {
+      "types": ["feat", "fix", "docs", "style", "refactor", "perf", "test", "build", "ci", "chore", "revert"],
+      "scope": {
+        "required": false,
+        "allowed": ["*"],
+        "validate": false,
+        "multiple": false
+      },
+      "warnOnFail": false,
+      "maxSubjectLength": 100,
+      "subjectPattern": ".+",
+      "subjectPatternErrorMsg": "subject does not match subject pattern!",
+      "helpMessage": "",
+      "autoFix": false
+    }
+  }
 }

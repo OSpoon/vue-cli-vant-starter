@@ -14,7 +14,8 @@ vue-cli 和 vant 结合的项目开发模板，主要内容如下：
 1. [使用说明(模板使用).md](./使用说明(模板使用).md)
 2. [使用说明(开发工具).md](./使用说明(开发工具).md)
 3. [使用说明(构建和发布).md](./使用说明(构建和发布).md)
-4. [其他说明(Less使用).md](./其他说明(Less使用).md)
+4. [使用说明(GIT提交规范).md](./使用说明(GIT提交规范).md)
+5. [其他说明(Less使用).md](./其他说明(Less使用).md)
 
 ### 使用依赖及文档地址 ###
 
@@ -28,6 +29,18 @@ vue-cli 和 vant 结合的项目开发模板，主要内容如下：
 8. [crypto-js](https://www.npmjs.com/package/crypto-js)
 9. [js-cookie](https://www.npmjs.com/package/js-cookie)
 10. [vue-wechat-title](https://www.npmjs.com/package/vue-wechat-title)
+
+
+### 注意事项 ###
+1. Q: 如使用sourceTree提交代码,在Mac系统提示env: node: No such file or directory
+   A: 项目开启的提交信息检测,因未知原因无法解决,提供初步解决方案如下
+        1. 在User/username目录下找到.bash_profile文件(显示隐藏文件快捷键:Command+Shift+.)
+        2. 文件末尾添加命令`alias ost="/Applications/SourceTree.app/Contents/MacOS/SourceTree"`
+        3. 重启电脑使.bash_profile得修改生效
+        4. 开机后终端执行`ost`即可打开sourceTree,提交代码可正常进行
+2. Q: 提交代码提示红色报错信息:INVALID COMMIT MSG: does not match "<type>(<scope>): <subject>" !
+   A: 项目开启的提交信息检测,因不规范被拦截,请查看[使用说明(GIT提交规范).md](./使用说明(GIT提交规范).md),修改后进行重新提交
+
 
 ### 鸣谢 ###
 
