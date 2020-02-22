@@ -9,7 +9,9 @@ vue-cli 和 vant 结合的项目开发模板，主要内容如下：
     3. 设计图标准按照 375 * 667 的尺寸给出，布局的时候除了 1px 其他全部按照 测量的距离 写就可以了
 4. 使用`plop`构建初始页面/组件/store/apis,执行命令`npm run new`
 5. 增加`axios`重复发送同一请求屏蔽操作
-6. 执行`yarn clog`生成CHANGELOG.md提交日志(注意需要提升package.json中的version),需安装conventional-changelog和对应的cli,`yarn add --dev conventional-changelog conventional-changelog-cli`
+6. 执行`yarn clog`生成CHANGELOG.md提交日志
+      1. 注意需要提升package.json中的version才能生成新的log
+      2. 需安装conventional-changelog和对应的cli,执行命令:`yarn add --dev conventional-changelog conventional-changelog-cli`
 
 ### 使用说明 ###
 1. [使用说明(模板使用).md](./使用说明(模板使用).md)
