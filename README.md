@@ -34,7 +34,7 @@ vue-cli 和 vant 结合的项目开发模板，主要内容如下：
 10. [vue-wechat-title](https://www.npmjs.com/package/vue-wechat-title)
 
 
-### CHANGELOG ###
+### 修订记录 ###
 [CHANGELOG.md](./CHANGELOG.md)
 
 ### 注意事项 ###
