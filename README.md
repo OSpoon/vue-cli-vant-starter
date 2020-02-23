@@ -14,11 +14,11 @@ vue-cli 和 vant 结合的项目开发模板，主要内容如下：
       2. 需安装conventional-changelog和对应的cli,执行命令:`yarn add --dev conventional-changelog conventional-changelog-cli`
 
 ### 使用说明 ###
-1. [使用说明(模板使用).md](./使用说明(模板使用).md)
-2. [使用说明(开发工具).md](./使用说明(开发工具).md)
-3. [使用说明(构建和发布).md](./使用说明(构建和发布).md)
-4. [使用说明(GIT提交规范).md](./使用说明(GIT提交规范).md)
-5. [其他说明(Less使用).md](./其他说明(Less使用).md)
+1. [使用说明(模板使用).md](./docs/使用说明(模板使用).md)
+2. [使用说明(开发工具).md](./docs/使用说明(开发工具).md)
+3. [使用说明(构建和发布).md](./docs/使用说明(构建和发布).md)
+4. [使用说明(GIT提交规范).md](./docs/使用说明(GIT提交规范).md)
+5. [其他说明(Less使用).md](./docs/其他说明(Less使用).md)
 
 ### 使用依赖及文档地址 ###
 
