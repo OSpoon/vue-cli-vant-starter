@@ -12,6 +12,13 @@ vue-cli 和 vant 结合的项目开发模板，主要内容如下：
 6. 执行`yarn clog`生成CHANGELOG.md提交日志
       1. 注意需要提升package.json中的version才能生成新的log
       2. 需安装conventional-changelog和对应的cli,执行命令:`yarn add --dev conventional-changelog conventional-changelog-cli`
+7. svg图片支持,使用如下:
+      1. 可到[iconfont](https://www.iconfont.cn/)搜索合适的图标进行下载,格式要求svg
+      2. 将下载的图标导入src/icons/svg目录下
+      3. 在需要使用的地方加入`<svg-icon icon-class="{{svg图标名称}}" />`
+   注意:
+      1. 下载到的图标颜色与`svg-icon`组件默认颜色不一致,可执行`yarn svgo`命令删除svg图标的'fill'和'fill-rule',如需保持颜色切勿执行
+      2. 下载到的图标大小尺寸建议统一设置`128`
 
 ### 使用说明 ###
 1. [使用说明(模板使用).md](./docs/使用说明(模板使用).md)
