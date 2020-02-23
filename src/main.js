@@ -5,6 +5,7 @@ import router from './routers'
 import store from './store'
 import utils from './utils'
 import * as filters from './filters' // global filters
+import './icons' // icon
 
 import {
   Toast,
