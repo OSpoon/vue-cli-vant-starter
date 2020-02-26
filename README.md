@@ -1,11 +1,12 @@
 # vue-cli-vant-starter #
 
 
-### 快速依赖本模板开发
+### 快速依赖本模板开发 ### 
 ```sh
 vue create --preset ospoon/vue-preset-starter <project-name>
 ```
 
+### 本模板特点 ### 
 vue-cli 和 vant 结合的项目开发模板，主要内容如下：
 1. 安装`eruda`,在dev模式并开启debug时,方便移动端查看日志
 2. vant 引入组件采用的是[自动按需引入插件](https://youzan.github.io/vant/#/zh-CN/quickstart)，均已经配置完善。
