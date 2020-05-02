@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件上载</title>
+
+    <script src="jsrsasign-all-min.js" type="text/javascript"></script>
+    <script src="jquery.js" type="text/javascript"></script>
+</head>
+<body>
+<form id="upload" enctype="multipart/form-data" method="post" action="https://localhost/securityupload/file">
+    <label>文件一：<input type="file" name="file" value="d:\test.jpg" id="file" accept="application/pdf,image/gif, image/jpeg"/></label>
+    <label>投保单号：<input type="text" name="policyNo" id="policyNo" value="1234567"/></label>
+    <label>来源：<input type="text" name="storageType" id="storageType" value="test"></label>
+    <label>appId：<input type="text" name="appId" id="appId" value="guangshubao"></label>
+    <label>传送开始时间：<input type="text" name="startDateTime" id="startDateTime" value="2020-04-29 13:21:22"></label>
+    <label>是否保存到数据库:<input type="text" name="saveDB" id="saveDB" value="Y"></label>
+
+    <input type="button" value="提交" onclick="sample();">
+</form>
+</body>
+<script>
+    function sample() {
+        var sign_pre = document.getElementById("appId").value + "|"
+        + document.getElementById("policyNo").value + "|"
+        + document.getElementById("saveDB").value + "|"
+        + getCurrentDate(2) + "|"
+        + document.getElementById("storageType").value + "|" + "[B@3bfdc050";
+        let formData = new FormData($("#upload")[0]);
+        $.ajax({
+            url: 'http://localhost:9800/securityupload/file' ,
+            type: 'POST',
+            data: formData,
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            headers: {
+                "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cGxvYWRmaWxlIiwicm9sZSI6Imludm9rZSIsImlzcyI6Imd1YW5nc2h1YmFvIiwiZXhwIjoxOTAzMjQ0MTkzfQ.Zon4XTdtfLsAKKR_AaqnuMy8C8s3zuWoZcM_PZv3Bqw",
+                "Signature":   MD5（sign_pre）
+                
+            },
+            success: function (returndata) {
+                alert(returndata);
+            },
+            error: function (returndata) {
+                alert(returndata);
+            }
+        });
+    }
+    jQuery(function(){
+        $("#startDateTime").val(getCurrentDate(2));
+    });
+    /**
+     *获取当前时间
+     *format=1精确到天
+     *format=2精确到分
+     */
+    function getCurrentDate(format) {
+        var now = new Date();
+        var year = now.getFullYear(); //得到年份
+        var month = now.getMonth();//得到月份
+        var date = now.getDate();//得到日期
+        var day = now.getDay();//得到周几
+        var hour = now.getHours();//得到小时
+        var minu = now.getMinutes();//得到分钟
+        var sec = now.getSeconds();//得到秒
+        month = month + 1;
+        if (month < 10) month = "0" + month;
+        if (date < 10) date = "0" + date;
+        if (hour < 10) hour = "0" + hour;
+        if (minu < 10) minu = "0" + minu;
+        if (sec < 10) sec = "0" + sec;
+        var time = "";
+        //精确到天
+        if(format==1){
+            time = year + "-" + month + "-" + date;
+        }
+        //精确到分
+        else if(format==2){
+            time = year + "-" + month + "-" + date+ " " + hour + ":" + minu + ":" + sec;
+        }
+    }
+</script>
+</html>

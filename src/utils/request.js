@@ -28,6 +28,7 @@ const service = axios.create({
 // 请求拦截器
 service.interceptors.request.use(
   config => {
+    console.log(config)
     // 拦截重复请求(即当前正在进行的相同请求)
     const requestData = getRequestIdentify(config, true)
     removePending(requestData, true)
@@ -54,6 +55,9 @@ service.interceptors.request.use(
     //   // please modify it according to the actual situation
     //   config.headers['X-AUTH-TOKEN'] = getToken()
     // }
+    config.headers['Content-Type'] = 'multipart/form-data'
+    config.headers['Signature'] = config.sign
+    config.headers['Authorization'] = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cGxvYWRmaWxlIiwicm9sZSI6Imludm9rZSIsImlzcyI6Imd1YW5nc2h1YmFvIiwiZXhwIjoxOTAzMjQ0MTkzfQ.Zon4XTdtfLsAKKR_AaqnuMy8C8s3zuWoZcM_PZv3Bqw'
     return config
   },
   error => {
