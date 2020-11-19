@@ -30,7 +30,8 @@ import {
   Cell,
   CellGroup,
   Search,
-  ActionSheet
+  ActionSheet,
+  List
 } from 'vant'
 Vue.use(Toast)
 Vue.use(Field)
@@ -55,6 +56,7 @@ Vue.use(Cell)
 Vue.use(CellGroup)
 Vue.use(Search)
 Vue.use(ActionSheet)
+Vue.use(List)
 
 import VueWechatTitle from 'vue-wechat-title'
 Vue.use(VueWechatTitle)

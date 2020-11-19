@@ -20,19 +20,19 @@ module.exports = {
   devServer: {
     port: port,
     hot: true,
-    open: true,
+    open: false,
     disableHostCheck: true,
     overlay: {
       warnings: false,
       errors: true
-    },
-    proxy: {
-      '/api': {
-        target: '<url>',
-        ws: true,
-        changeOrigin: true
-      }
     }
+    // proxy: {
+    //   '/api': {
+    //     target: '<url>',
+    //     ws: true,
+    //     changeOrigin: true
+    //   }
+    // }
   },
   css: {
     sourceMap: true,

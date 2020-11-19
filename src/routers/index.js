@@ -6,10 +6,19 @@ Vue.use(Router)
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: () => import('@/views/home/index.vue'),
+    name: 'login',
+    component: () => import('@/views/login/index.vue'),
     meta: {
-      title: '首页'
+      title: '登录'
+    }
+  },
+  {
+    path: '/list',
+    name: 'list',
+    component: () => import('@/views/list/index.vue'),
+    meta: {
+      title: '登录',
+      login: true
     }
   },
   {

@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <transition name="van-fade">
-      <router-view v-wechat-title="title + ' - ' + $route.meta.title" />
+      <router-view
+        v-wechat-title="title + ' - ' + $route.meta.title"
+        class="router-view"
+      />
     </transition>
   </div>
 </template>
@@ -17,7 +20,8 @@ export default {
 </script>
 <style lang="less">
 #app {
-  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -33,5 +37,12 @@ export default {
       color: #42b983;
     }
   }
+}
+.router-view {
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+  position: absolute;
+  background: #f7f8fa;
 }
 </style>
